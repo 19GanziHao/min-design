@@ -1,0 +1,60 @@
+.min-tabs-nav {
+  display: flex;
+  flex-wrap: nowrap;
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  border-bottom: $nav-tabs-border-width solid $nav-tabs-border-color;
+}
+
+// nav的每项
+.min-tabs-nav-item {
+  display: block;
+  padding: $nav-link-padding-y $nav-link-padding-x;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: $nav-tabs-link-hover-color;
+  }
+  &.disabled {
+    color: $nav-link-disabled-color;
+    pointer-events: none;
+    cursor: default;
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  &.is-active {
+    color: $nav-tabs-link-active-color;
+  }
+
+}
+
+// line样式
+.nav-line {
+  .min-tabs-nav-item {
+    &.is-active {
+      border-bottom: $nav-tabs-border-width * 2 solid $nav-tabs-link-active-color;
+    }
+  }
+}
+
+// card样式
+.nav-card {
+  // card样式的nav
+  .min-tabs-nav-item {
+    border: $nav-tabs-border-width solid transparent;
+    margin-bottom: -$nav-tabs-border-width;
+    &.is-active {
+      @include border-top-radius($nav-tabs-border-radius);
+      background-color: $nav-tabs-link-active-bg;
+      border-color: $nav-tabs-link-active-border-color;
+    }
+  }
+}
+
+
+.min-tabs-content {
+  margin-top: $nav-tabs-content-margin;
+}
