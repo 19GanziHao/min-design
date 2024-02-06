@@ -4,7 +4,7 @@ import React from "react";
 // import { config } from "react-transition-group";
 import { render, fireEvent, screen } from "@testing-library/react";
 
-import Alert, { IAlertProps } from "./index";
+import Alert, { IAlertProps } from "./alert";
 // config.disabled = true;
 
 // jest.mock("../Icon/icon", () => {
@@ -26,8 +26,8 @@ const typeProps: IAlertProps = {
 };
 describe("test Alert Component", () => {
   it("should render the correct default Alert", () => {
-    const {container } = render(<Alert {...testProps} />);
-    const el = container.querySelector('.min-alert')
+    const { container } = render(<Alert {...testProps} />);
+    const el = container.querySelector(".min-alert");
 
     expect(el).toBeInTheDocument();
 

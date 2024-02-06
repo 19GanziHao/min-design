@@ -12,9 +12,11 @@ $alert-colors: (
   border: $alert-border-width solid transparent;
   border-radius: $alert-border-radius;
 
+  
+
   .min-alert-close {
     position: absolute;
-    top: 0;
+    top: 20%;
     right: 0;
     padding: $alert-padding-y $alert-padding-x;
     color: inherit;

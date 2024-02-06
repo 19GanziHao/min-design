@@ -1,15 +1,20 @@
-import Button from "./components/Button";
-import Alert from "./components/Alert";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fas } from "@fortawesome/free-solid-svg-icons";
 import Menu from "./components/Menu/menu";
 import MenuItem from "./components/Menu/menuItem";
 import SubMenu from "./components/Menu/subMenu";
 import Tabs from "./components/Tabs/tabs";
 import TabItem from "./components/Tabs/tabItem";
+
+import { Input } from "./components/Input/input";
+library.add(fas);
+
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Menu defaultIndex="0" defaultOpenSubMenus={["2"]} mode="vertical">
+        {/* < Icon icon="coffee" theme="secondary" size="10x"/> */}
+        <Menu defaultIndex="0" defaultOpenSubMenus={["2"]} mode="horizontal">
           <MenuItem>cool link</MenuItem>
           <MenuItem>cool link 2</MenuItem>
           <SubMenu title="甘梓豪">
@@ -27,21 +32,10 @@ function App() {
           </TabItem>
           <TabItem label="内容3">内容3</TabItem>
         </Tabs>
-        {/* <Alert title="hhhhhhh" description="123" type="success" closable />
-        <Alert title="hhhhhhh" onClose={() => console.log(123)} /> */}
-
-        {/* <Button>默认</Button>
-        <Button btnType="primary">Hello</Button>
-        <Button btnType="link" href="baidu.com">
-          Link
-        </Button>
-        <Button btnType="danger" size="sm">
-          大的ddddd
-        </Button>
-        <code>const a = '1'</code> */}
+        <Input icon="times" prepand="https://" />
       </header>
     </div>
   );
 }
-
+ 
 export default App;

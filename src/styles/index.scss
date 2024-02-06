@@ -7,6 +7,9 @@
 // mixin
 @import 'mixin';
 
+// animation
+@import './animation';
+
 // button
 @import '../components/Button/style';
 
@@ -18,3 +21,12 @@
 
 // tabs
 @import '../components/Tabs/style';
+
+// icon
+@import '../components/Icon/style';
+
+// input
+@import '../components/Input/style';
+
+// autoComplete
+@import '../components/AutoComplete/style';

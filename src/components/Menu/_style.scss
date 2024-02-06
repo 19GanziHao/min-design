@@ -72,7 +72,7 @@
     list-style: none;
     padding-left: 0;
     white-space: nowrap;
-    display: none;
+    //display: none;
     // 下拉列表中的每一项
     >.menu-item {
       padding: $menu-item-padding-y $menu-item-padding-x;
@@ -87,9 +87,9 @@
     }
   }
   // 显示子列表
-  .min-submenu.menu-opened {
-    display: block;
-  }
+  // .min-submenu.menu-opened {
+  //   display: block;
+  // }
 }
 // menu的形式为横向时
 .menu-horizontal {

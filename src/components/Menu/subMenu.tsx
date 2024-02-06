@@ -2,6 +2,8 @@ import React, { useContext, useState } from "react";
 import classNames from "classnames";
 import { MenuContext } from "./menu";
 import { IMenuItemProps } from "./menuItem";
+import Icon from "../Icon/icon";
+import Transition from "../Transition/transition";
 export interface ISubMenuProps {
   index?: string;
   /**
@@ -23,10 +25,16 @@ const SubMenu: React.FC<ISubMenuProps> = ({
   children,
 }) => {
   const context = useContext(MenuContext);
-  const isOpened = context.defaultOpenSubMenus && (index && context.mode === 'vertical') ? context.defaultOpenSubMenus.includes(index) : false;
+  const isOpened =
+    context.defaultOpenSubMenus && index && context.mode === "vertical"
+      ? context.defaultOpenSubMenus.includes(index)
+      : false;
   const [menuOpen, setMenuOpen] = useState(isOpened);
   const classes = classNames("menu-item submenu-item", className, {
-    "is-active": context.index === index || context.index.split('-')[0] === index,
+    "is-active":
+      context.index === index || context.index.split("-")[0] === index,
+    "is-opened": menuOpen,
+    "is-vertical": context.mode === "vertical",
   });
 
   // 点击显示子列表 menu纵向排列就单击显示
@@ -43,7 +51,7 @@ const SubMenu: React.FC<ISubMenuProps> = ({
 
     timer = setTimeout(() => {
       setMenuOpen(toggle);
-    }, 300);
+    }, 200);
   };
 
   // 通过排列方式来判断使用哪个请求
@@ -75,13 +83,18 @@ const SubMenu: React.FC<ISubMenuProps> = ({
         );
       }
     });
-    return <ul className={subMenuClasses}>{childrenComponent}</ul>;
+    return (
+      <Transition in={menuOpen} timeout={300} animation="zoom-in-top">
+        <ul className={subMenuClasses}>{childrenComponent}</ul>
+      </Transition>
+    );
   };
   // 渲染当前列表
   return (
     <li key={index} className={classes} {...mouseEvents}>
       <div className="submenu-title" {...clickEvents}>
         {title}
+        <Icon icon="angle-down" className="arrow-icon" />
       </div>
       {renderChildren()}
     </li>
