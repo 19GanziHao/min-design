@@ -44,7 +44,7 @@ interface IMenuContext {
 // 创建context
 export const MenuContext = createContext<IMenuContext>({ index: "0" });
 
-const Menu: React.FC<IMenuProps> = (props) => {
+export const Menu: React.FC<IMenuProps> = (props) => {
   const {
     mode = "horizontal",
     defaultIndex,
@@ -105,5 +105,3 @@ Menu.defaultProps = {
   mode: "horizontal",
   defaultOpenSubMenus: []
 };
-
-export default Menu;

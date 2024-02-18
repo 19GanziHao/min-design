@@ -2,7 +2,7 @@
 /* eslint-disable testing-library/no-node-access */
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import Menu, { IMenuProps } from "./menu";
+import {Menu, IMenuProps } from "./menu";
 import MenuItem from "./menuItem";
 
 const testProps: IMenuProps = {

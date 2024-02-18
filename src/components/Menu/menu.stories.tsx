@@ -1,6 +1,6 @@
 import type { StoryFn, Meta, StoryObj } from "@storybook/react";
 
-import Menu from "./menu";
+import { Menu } from "./menu";
 import MenuItem from "./menuItem";
 import SubMenu from "./subMenu";
 
@@ -25,11 +25,11 @@ const Ele = () => {
   );
 };
 
-export const ADefault: Story = {
-  args: {
-    children: <Ele />,
-  },
-};
+// export const ADefault: Story = {
+//   args: {
+//     children: <Ele />,
+//   },
+// };
 
 export const DefaultMenu: StoryFn<typeof Menu> = (args) => (
   <Menu defaultIndex="0" {...args}>

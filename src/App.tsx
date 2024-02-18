@@ -1,13 +1,19 @@
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
-import Menu from "./components/Menu/menu";
+import { Menu } from "./components/Menu/menu";
 import MenuItem from "./components/Menu/menuItem";
 import SubMenu from "./components/Menu/subMenu";
 import Tabs from "./components/Tabs/tabs";
 import TabItem from "./components/Tabs/tabItem";
-
+import { Alert } from "./components/Alert/alert";
 import { Input } from "./components/Input/input";
+import { Upload } from "./components/Upload/upload";
+import axios from 'axios'
 library.add(fas);
+
+axios.post("https://jsonplaceholder.typicode.com/posts").then((resp) => {
+  console.log(resp);
+});
 
 function App() {
   return (
@@ -33,9 +39,10 @@ function App() {
           <TabItem label="内容3">内容3</TabItem>
         </Tabs>
         <Input icon="times" prepand="https://" />
+        <Alert title="这是一个标题" description="这是一个描述" />
       </header>
     </div>
   );
 }
- 
+
 export default App;

@@ -10,11 +10,29 @@ export type ButtonSize = "lg" | "sm";
 export type ButtonType = "primary" | "default" | "danger" | "link";
 
 interface IBaseButtonProps {
+  /**
+   * 自定义类名
+   */
   className?: string;
+  /**
+   * 是否禁用
+   */
   disabled?: boolean;
+  /**
+   * 按钮大小
+   */
   size?: ButtonSize;
+  /**
+   * 按钮类型
+   */
   btnType?: ButtonType;
+  /**
+   * 子属性
+   */
   children: ReactNode;
+  /**
+   * 类型为link时所填写的跳转链接
+   */
   href?: string;
 }
 // 原生按钮
@@ -24,7 +42,12 @@ type AnchorButtonProps = IBaseButtonProps & AnchorHTMLAttributes<HTMLElement>;
 
 export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>;
 
-const Button: React.FC<ButtonProps> = (props) => {
+/**
+ * ```js
+ * import {Button} from 'min-design'
+ * ```
+ */
+export const Button: React.FC<ButtonProps> = (props) => {
   const { className, disabled, size, btnType, href, children, ...restProps } =
     props;
 
@@ -52,5 +75,3 @@ Button.defaultProps = {
   disabled: false,
   btnType: "default",
 };
-
-export default Button;

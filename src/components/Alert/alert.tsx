@@ -28,7 +28,7 @@ export interface IAlertProps {
   closable?: boolean;
 }
 
-const Alert: React.FC<IAlertProps> = (props) => {
+export const Alert: React.FC<IAlertProps> = (props) => {
   const { title, description, type = "default", onClose, closable } = props;
   const [hide, setHide] = useState(false);
   const classes = classNames("min-alert", {
@@ -47,13 +47,15 @@ const Alert: React.FC<IAlertProps> = (props) => {
   return (
     <Transition in={!hide} timeout={300} animation="zoom-in-top">
       <div className={classes}>
-        <span className={titleClass}>{title}</span>
+        <div className="min-alert-top">
+          <span className={titleClass}>{title}</span>
+          {closable && (
+            <span className="min-alert-close" onClick={handleClose}>
+              <Icon icon="times" size="lg" />
+            </span>
+          )}
+        </div>
         {description && <p className="min-alert-desc"> {description}</p>}
-        {closable && (
-          <span className="min-alert-close" onClick={handleClose}>
-            <Icon icon="times" size="lg" />
-          </span>
-        )}
       </div>
     </Transition>
   );
@@ -62,5 +64,3 @@ const Alert: React.FC<IAlertProps> = (props) => {
 Alert.defaultProps = {
   closable: true,
 };
-
-export default Alert;

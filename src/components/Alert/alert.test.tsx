@@ -4,7 +4,7 @@ import React from "react";
 // import { config } from "react-transition-group";
 import { render, fireEvent, screen } from "@testing-library/react";
 
-import Alert, { IAlertProps } from "./alert";
+import {Alert, IAlertProps } from "./alert";
 // config.disabled = true;
 
 // jest.mock("../Icon/icon", () => {

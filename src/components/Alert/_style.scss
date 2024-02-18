@@ -6,19 +6,21 @@ $alert-colors: (
 );
 
 .min-alert {
-  position: relative;
   padding: $alert-padding-y $alert-padding-x;
   margin-bottom: $alert-margin-bottom;
   border: $alert-border-width solid transparent;
   border-radius: $alert-border-radius;
+  width: 50%;
+  margin: 0 auto;
 
-  
+  .min-alert-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
 
   .min-alert-close {
-    position: absolute;
-    top: 20%;
-    right: 0;
-    padding: $alert-padding-y $alert-padding-x;
+    text-align: right;
     color: inherit;
     cursor: pointer;
   }
