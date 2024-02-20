@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "outDir": "build", // 输出的文件
+    "module": "ESNext", // 文件的模块格式
+    "target": "es5", // 浏览器所支持的语法
+    "declaration": true, // 生成声明文件
+    "jsx": "react-jsx", // 支持JSX
+    "moduleResolution": "node", // 模块解析策略
+    "allowSyntheticDefaultImports": true, // 允许从没有设置默认导出的模块中默认导入
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "src/**/*.test.tsx",
+    "src/**/*.stories.tsx?"
+  ]
+}

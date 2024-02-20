@@ -28,7 +28,7 @@ export interface ITabsProps {
   children?: ReactNode;
 }
 
-const Tabs: FC<ITabsProps> = ({
+export const Tabs: FC<ITabsProps> = ({
   defaultIndex,
   onSelect,
   className,

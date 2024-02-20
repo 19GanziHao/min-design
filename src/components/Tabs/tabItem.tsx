@@ -8,7 +8,7 @@ export interface ITabItemProps {
   children?: ReactNode;
 }
 
-const TabItem: FC<ITabItemProps> = (props) => {
+export const TabItem: FC<ITabItemProps> = (props) => {
   const { children } = props
   
   return <div className="viking-tab-panel">{children}</div>;

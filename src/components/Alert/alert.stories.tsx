@@ -9,6 +9,13 @@ const meta: Meta<typeof Alert> = {
     layout: "centered",
   },
   tags: ["autodocs"],
+  decorators: [
+    (Story) => (
+      <div style={{ width: "550px" }}>
+        <Story />
+      </div>
+    ),
+  ],
 } satisfies Meta<typeof Alert>;
 
 export default meta;
